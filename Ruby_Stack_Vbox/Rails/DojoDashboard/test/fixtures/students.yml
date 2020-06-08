@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Dojo_id: 
+  fname: MyString
+  lname: MyString
+  email: MyString
+
+two:
+  Dojo_id: 
+  fname: MyString
+  lname: MyString
+  email: MyString
