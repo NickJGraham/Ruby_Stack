@@ -34,8 +34,8 @@
 				<td><%= borrower.fname %></td>
 				<td><%= borrower.purpose %></td>
 				<td><%= borrower.description %></td>
-				<td><%= borrower.money %></td>
-				<td><%= borrower.raised %></td>
+				<td>$<%= borrower.money %></td>
+				<td>$<%= borrower.raised %></td>
 				<td>
 					<form action="/lenders/<%= borrower.id %>" method="post">
 					<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
