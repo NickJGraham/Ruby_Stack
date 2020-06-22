@@ -1,0 +1,13 @@
+<%
+=begin%>
+ <h1>
+    <% @users.each do |user| %>
+    <ul>
+        <li> <%= user.fname %> </li>
+    </ul>
+    <% end %>
+</h1> 
+<%
+=end%>
+
+<h1> <%= @user.fname %> </h1>
