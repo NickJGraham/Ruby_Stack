@@ -25,12 +25,17 @@ class LendersController < ApplicationController
 		else
 			l = 0
 			l = lender.money.to_i - lender_params[:money].to_i
-			lender.money = l
-			lender.save
-			b = 0
-			b = borrower.raised.to_i + lender_params[:money].to_i
-			borrower.raised = b
-			borrower.save
+			if l < 0 
+				flash[:errors] = ['You cannot lend over your balance - Insufficient Funds']
+				
+			else
+				lender.money = l
+				lender.save
+				b = 0
+				b = borrower.raised.to_i + lender_params[:money].to_i
+				borrower.raised = b
+				borrower.save
+			end
 			if lend = Lend.find_by(lender_id: session[:user_id], borrower_id: params[:id])
 				amt = 0
 				amt = lend.amount.to_i + lender_params[:money].to_i
