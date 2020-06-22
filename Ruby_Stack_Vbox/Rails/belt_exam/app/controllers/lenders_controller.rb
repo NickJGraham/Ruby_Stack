@@ -20,7 +20,7 @@ class LendersController < ApplicationController
 		lender = Lender.find(session[:user_id])
 		borrower = Borrower.find(params[:id])
 		if lender.money == 0
-			flash[:errors] = ['You cannot lend money']
+			flash[:errors] = ['You cannot lend money - Insufficient Funds']
 			redirect_to "/lenders"
 		else
 			l = 0
